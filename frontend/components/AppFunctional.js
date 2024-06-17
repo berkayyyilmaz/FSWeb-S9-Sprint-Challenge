@@ -7,10 +7,15 @@ const initialSteps = 0
 const initialIndex = 4 //  "B" nin bulunduğu indexi
 
 export default function AppFunctional(props) {
+  const [index, setIndex] = useState(initialIndex);
+  const [steps, setSteps] = useState(initialSteps);
+  const [message, setMessage] = useState(initialMessage);
+  const [email, setEmail] = useState(initialEmail);
   // AŞAĞIDAKİ HELPERLAR SADECE ÖNERİDİR.
   // Bunları silip kendi mantığınızla sıfırdan geliştirebilirsiniz.
 
   function getXY() {
+    const x = 
     // Koordinatları izlemek için bir state e sahip olmak gerekli değildir.
     // Bunları hesaplayabilmek için "B" nin hangi indexte olduğunu bilmek yeterlidir.
   }
@@ -34,6 +39,7 @@ export default function AppFunctional(props) {
   function ilerle(evt) {
     // Bu event handler, "B" için yeni bir dizin elde etmek üzere yukarıdaki yardımcıyı kullanabilir,
     // ve buna göre state i değiştirir.
+
   }
 
   function onChange(evt) {
@@ -63,11 +69,11 @@ export default function AppFunctional(props) {
         <h3 id="message"></h3>
       </div>
       <div id="keypad">
-        <button id="left">SOL</button>
-        <button id="up">YUKARI</button>
-        <button id="right">SAĞ</button>
-        <button id="down">AŞAĞI</button>
-        <button id="reset">reset</button>
+        <button id="left" onClick={ilerle}>SOL</button>
+        <button id="up" onClick={ilerle}>YUKARI</button>
+        <button id="right" onClick={ilerle}>SAĞ</button>
+        <button id="down" onClick={ilerle}>AŞAĞI</button>
+        <button id="reset" onClick={reset}>reset</button>
       </div>
       <form>
         <input id="email" type="email" placeholder="email girin"></input>
